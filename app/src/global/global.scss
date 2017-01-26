@@ -1,0 +1,60 @@
+html {
+	height: 100%;
+	font-size: 6px;
+
+	@include screen-sm() {
+		font-size: 7px;
+	}
+
+	@include screen-md() {
+		font-size: 8px;
+	}
+
+	@include screen-lg() {
+		font-size: 9px;
+	}
+
+	@include screen-xl() {
+		font-size: 10px;
+	}
+}
+
+body {
+	height: 100%;
+	font-size: 1.6rem;
+	font-family: $font-main;
+	color: $color-text;
+	line-height: 1.5;
+
+	&.noscroll {
+		overflow: hidden;
+	}
+}
+
+input,
+textarea {
+	// appearance: none;
+	// border-radius: 0;
+
+	&:hover,
+	&:focus,
+	&:active {
+		outline: none;
+	}
+}
+
+textarea {
+	resize: none;
+}
+
+hr {
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+::selection {
+
+}

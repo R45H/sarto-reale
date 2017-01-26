@@ -1,0 +1,21 @@
+block vars
+
+doctype html
+html(lang="ru")
+	head
+		block head
+			include ../partials/head
+
+		title #{page.title} | #{global.name}
+	body
+		include ../partials/header
+
+		.wrapper
+			main.main
+				block content
+
+			include ../partials/footer
+
+			// END OF VISIBLE CONTENT
+
+			//- Write invisible content here
