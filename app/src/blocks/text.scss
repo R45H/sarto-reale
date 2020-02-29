@@ -1,0 +1,47 @@
+$name: text;
+
+.#{$name} {
+
+	p {
+		margin: 1rem 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&_size_sm {
+		font-size: 14px;
+	}
+
+	&_size_lg {
+		font-size: 18px;
+	}
+
+	&_invert {
+		color: $color-text-light;
+
+		a {
+
+			&:not([class]),
+			&[class=''] {
+				border-color: $color-text-light;
+
+				&:hover {
+					color: $color-text;
+					background-color: $color-text-light;
+				}
+
+				&:active {
+					color: $color-text;
+					background-color: $color-text-light-active;
+					border-color: $color-text-light-active;
+				}
+			}
+		}
+	}
+}

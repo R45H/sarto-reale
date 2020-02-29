@@ -24,7 +24,7 @@ body {
 	font-size: 1.6rem;
 	font-family: $font-main;
 	color: $color-text;
-	line-height: 1.4;
+	line-height: 1.5;
 	display: flex;
 	flex-direction: column;
 
@@ -56,15 +56,17 @@ a {
 	&:not([class]),
 	&[class=''] {
 		@extend %transition;
-		color: $color-text;
-		border-bottom: 1px solid currentColor;
+		border-bottom: 1px solid $color-text;
 
 		&:hover {
-			color: $color-text-hover;
+			color: $color-text-light;
+			background-color: $color-text;
 		}
 
 		&:active {
-			color: $color-text-active;
+			color: $color-text-light;
+			background-color: $color-text-active;
+			border-color: $color-text-active;
 		}
 	}
 }
