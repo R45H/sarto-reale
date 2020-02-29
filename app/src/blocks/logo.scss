@@ -1,0 +1,25 @@
+$name: logo;
+
+.#{$name} {
+	display: flex;
+
+	&__link {
+		@extend %transition;
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+	}
+}
+
+a.#{$name}__link {
+
+	&:hover {
+		opacity: .75;
+	}
+
+	&:active {
+		opacity: .5;
+	}
+}

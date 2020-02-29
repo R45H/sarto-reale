@@ -1,0 +1,4 @@
+mixin logo
+	.logo
+		a.logo__link(href= global.link_home)
+			img.logo__img(src=`img/logo${attributes.invert === true ? '-invert' : ''}.png` alt= global.name)

@@ -1,3 +1,5 @@
+include ../components/logo
+
 .mb-15
 
 .container
@@ -75,3 +77,11 @@
 			.btn.btn_wide .btn.btn_wide
 		.mb-15
 			button.btn.btn_disabled(disabled) button.btn.btn_disabled or [disabled]
+
+	.mb-3rem
+		.row
+			.col-md-6
+				+logo
+			.col-md-6
+				.invert
+					+logo(invert=true)
