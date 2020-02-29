@@ -1,12 +1,9 @@
-var bs = require('browser-sync'); // Автоперезагрузка браузера
+const bs = require('browser-sync'); // Автоперезагрузка браузера
 
-module.exports = function(options) {
-	return function() {
-
-		bs({
-			server: options.dist,
-			notify: false,
-			ghostMode: false
-		});
-	}
+module.exports = ({dist}) => () => {
+	bs({
+		server: dist,
+		notify: false,
+		ghostMode: false
+	});
 };

@@ -1,49 +1,55 @@
-var
-	$    = require('gulp-load-plugins')(),
-	fs   = require('fs'); // Чтение и запись файлов
+const $ = require('gulp-load-plugins')();
+const fs = require('fs'); // Чтение и запись файлов
 
-module.exports = function(options) {
-	return function(done) {
+module.exports = (
+	{
+		name: defaultName,
+		title: defaultTitle,
+		layout: defaultLayout,
+		pageInit: defaultPageInit,
+		page: defaultPage
+	}) => done => {
+	const {util: {env}} = $;
 
-		var
-			name = $.util.env.name || $.util.env.n || options.name, // Имя файла
-			title = $.util.env.title || $.util.env.t || options.title, // Заголовок страницы
-			layout = $.util.env.layout || $.util.env.l || options.layout, // Шаблон страницы
-			string = // Содержимое страницы
-				'extends layouts/' + layout + '\r\n' +
-				'\r\n' +
-				'block vars\r\n' +
-				'\t-\r\n' +
-				'\t\tpage = {\r\n' +
-				'\t\t\ttitle: \'' + title + '\',\r\n' +
-				'\t\t\tlink: \'' + name + '.html\'\r\n' +
-				'\t\t}\r\n' +
-				'\r\n' +
-				'block content\r\n' +
-				'\tinclude pages/' + name,
-			pageInit = options.pageInit + name + '.pug', // Путь к странице с параметрами
-			page = options.page + name + '.pug'; // Путь к странице с вёрсткой
+	const name = env.name || env.n || defaultName; // Имя файла
+	const title = env.title || env.t || defaultTitle; // Заголовок страницы
+	const layout = env.layout || env.l || defaultLayout; // Шаблон страницы
 
-		if ((fs.existsSync(pageInit)) || (fs.existsSync(page))) {
-			printMsg('err', 'Страница "' + name + '.pug" уже существует!');
-		} else {
-			fs.writeFileSync(pageInit, string);
-			fs.writeFileSync(page, '');
-			setTimeout(function () {
-				fs.utimesSync(pageInit, new Date, new Date);
-			}, 0);
+	const string =
+`extends layouts/${layout}
 
-			printMsg('ok', 'Страница "' + name + '.pug" создана!');
-		}
+block vars
+\t-
+\t\tpage = {
+\t\t\ttitle: '${title}',
+\t\t\tlink: '${name}',
+\t\t}
 
-		function printMsg(state, str) {
-			var
-				reset = "\x1b[0m",
-				fgColor = (state == 'ok') ? '\x1b[32m' : (state == 'err') ? '\x1b[31m' : reset;
+block content
+\tinclude pages/${name}`;
 
-			console.log(fgColor + '%s' + reset, str);
-		}
+	const pageInit = `${defaultPageInit}/${name}.pug`; // Путь к странице с параметрами
+	const page = `${defaultPage}/${name}.pug`; // Путь к странице с вёрсткой
 
-		done();
+	if ((fs.existsSync(pageInit)) || (fs.existsSync(page))) {
+		printMsg('err', `Страница "${name}.pug" уже существует!`);
+	} else {
+		fs.writeFileSync(pageInit, string);
+		fs.writeFileSync(page, '');
+
+		setTimeout(() => {
+			fs.utimesSync(pageInit, new Date, new Date);
+		}, 0);
+
+		printMsg('ok', `Страница "${name}.pug" создана!`);
 	}
+
+	function printMsg(state, str) {
+		const reset = "\x1b[0m";
+		const fgColor = (state === 'ok') ? '\x1b[32m' : (state === 'err') ? '\x1b[31m' : reset;
+
+		console.log(`${fgColor}${str}${reset}`);
+	}
+
+	done();
 };

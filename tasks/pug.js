@@ -1,41 +1,37 @@
-var
-	gulp   = require('gulp'),
-	$      = require('gulp-load-plugins')(),
-	fs     = require('fs'), // Чтение и запись файлов
-	bs     = require('browser-sync'), // Автоперезагрузка браузера
-	emitty = require('emitty').setup('app/templates', 'pug', { // Для инкрементальной сборки Pug
-		makeVinylFile: true
-	});
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
+const fs = require('fs'); // Чтение и запись файлов
+const bs = require('browser-sync'); // Автоперезагрузка браузера
 
-module.exports = function(options) {
-	return function() {
+// Для инкрементальной сборки Pug
+const emitty = require('emitty').setup('app/templates', 'pug', {
+	makeVinylFile: true
+});
 
-		return new Promise(function(resolve, reject) {
-			var sourceOptions = global.watch ? {read: false} : {};
+module.exports = ({src, json, isProd, dist}) => () => (
+	new Promise((resolve, reject) => {
+		const sourceOptions = global.watch ? {read: false} : {};
 
-			emitty.scan(global.emittyChangedFile).then(function() {
-				gulp.src(options.src, sourceOptions)
-					.pipe($.plumber())
-					.pipe($.if(global.watch === true, emitty.filter(global.emittyChangedFile)))
-					.pipe($.data(function(file) {
-						return JSON.parse(fs.readFileSync(options.json))
-					}))
-					.pipe($.pug())
-					.pipe($.if(options.prod, $.jsbeautifier({
-						indent_char: '\t',
-						indent_size: 1
-					})))
-					.pipe(gulp.dest(options.dist))
-					.pipe(bs.stream())
-					.on('end', resolve)
-					.on('error', reject);
-			});
-
-			if (global.watch === 'json') {
-				global.watch = true;
-			}
-
-			resolve();
+		emitty.scan(global.emittyChangedFile).then(() => {
+			gulp.src(src, sourceOptions)
+				.pipe($.plumber())
+				.pipe($.if(global.watch === true, emitty.filter(global.emittyChangedFile)))
+				.pipe($.data(() => JSON.parse(fs.readFileSync(json))))
+				.pipe($.pug())
+				.pipe($.if(isProd, $.jsbeautifier({
+					indent_char: '\t',
+					indent_size: 1
+				})))
+				.pipe(gulp.dest(dist))
+				.pipe(bs.stream())
+				.on('end', resolve)
+				.on('error', reject);
 		});
-	}
-};
+
+		if (global.watch === 'json') {
+			global.watch = true;
+		}
+
+		resolve();
+	})
+);

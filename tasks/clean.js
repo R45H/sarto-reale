@@ -1,8 +1,3 @@
-var del = require('del'); // Для удаления файлов и папок
+const del = require('del'); // Для удаления файлов и папок
 
-module.exports = function(options) {
-	return function() {
-
-		return del(options.dist);
-	}
-};
+module.exports = ({dist}) => () => del(dist);

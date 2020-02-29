@@ -1,17 +1,13 @@
-var
-	gulp = require('gulp'),
-	$    = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
 
-module.exports = function(options) {
-	return function() {
-
-		if (global.watch) {
-			global.watch = 'json';
-		}
-
-		return gulp.src(options.src)
-			.pipe($.plumber())
-			.pipe($.jsonmerge(options.fName))
-			.pipe(gulp.dest(options.dist));
+module.exports = ({src, fName, dist}) => () => {
+	if (global.watch) {
+		global.watch = 'json';
 	}
+
+	return gulp.src(src)
+		.pipe($.plumber())
+		.pipe($.jsonmerge(fName))
+		.pipe(gulp.dest(dist));
 };

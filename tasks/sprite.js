@@ -1,19 +1,15 @@
-var
-	gulp = require('gulp'),
-	sprite = require('gulp.spritesmith'); // Создание спрайтов
+const gulp = require('gulp');
+const sprite = require('gulp.spritesmith'); // Создание спрайтов
 
-module.exports = function(options) {
-	return function(done) {
+module.exports = ({src, fName, dist}) => done => {
+	const data = gulp.src(src)
+		.pipe(sprite({
+			imgName: `${fName}.png`,
+			cssName: `${fName}.css`
+		}));
 
-		var data = gulp.src(options.src)
-			.pipe(sprite({
-				imgName: options.fName + '.png',
-				cssName: options.fName + '.css'
-			}));
+	data.img.pipe(gulp.dest(dist)); // Картинка
+	data.css.pipe(gulp.dest(dist)); // Стили
 
-		data.img.pipe(gulp.dest(options.dist)); // Картинка
-		data.css.pipe(gulp.dest(options.dist)); // Стили
-
-		done();
-	}
+	done();
 };
