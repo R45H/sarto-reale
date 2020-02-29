@@ -1,0 +1,62 @@
+$name: title;
+
+.#{$name} {
+	font-size: 18px;
+	text-transform: uppercase;
+
+	@include screen-md() {
+		font-size: 2.4rem;
+	}
+
+	&_size_md {
+		font-size: 3.6rem;
+
+		@include screen-md() {
+			font-size: 3.6rem;
+		}
+	}
+
+	&_size_lg {
+		font-size: 4.5rem;
+
+		@include screen-md() {
+			font-size: 4.8rem;
+		}
+	}
+
+	&_size_xl {
+		font-size: 5.5rem;
+
+		@include screen-md() {
+			font-size: 7.2rem;
+		}
+	}
+
+	&_size_xxl {
+		font-size: 6.5rem;
+
+		@include screen-md() {
+			font-size: 9.6rem;
+		}
+	}
+
+	&_upper_none {
+		text-transform: none;
+	}
+
+	&_weight_thin {
+		font-weight: 100;
+	}
+
+	&_weight_light {
+		font-weight: 300;
+	}
+
+	&_weight_bold {
+		font-weight: bold;
+	}
+
+	&_invert {
+		color: $color-text-light;
+	}
+}
