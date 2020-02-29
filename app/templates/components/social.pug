@@ -1,0 +1,11 @@
+mixin social(data)
+	.social(class= attributes.class)
+
+		each val in data
+			a.social__link(
+				href= val.link
+				class= "social__link_" + val.name
+				target='_blank'
+				rel='nofollow'
+			)
+				i.fa(class='fa-' + val.name)

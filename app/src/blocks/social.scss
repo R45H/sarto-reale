@@ -1,0 +1,134 @@
+$name: social;
+
+.#{$name} {
+	display: inline-flex;
+	flex-wrap: wrap;
+
+	&__link {
+		@extend %transition;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		color: $color-text;
+		font-size: 20px;
+		width: 40px;
+		height: 40px;
+
+		&:hover {
+			color: $color-text-light;
+			background-color: $color-text;
+		}
+
+		&:active {
+			background-color: $color-text-active;
+		}
+
+		&:focus {
+			@extend %focus;
+			outline: none;
+			position: relative;
+		}
+
+		&_vk {
+
+			&:hover {
+				background-color: $color-vk;
+			}
+
+			&:active {
+				background-color: lighten($color-vk, 15%);
+			}
+
+			&:focus {
+				@extend %focus-vk;
+			}
+		}
+
+		&_facebook {
+
+			&:hover {
+				background-color: $color-fb;
+			}
+
+			&:active {
+				background-color: lighten($color-fb, 15%);
+			}
+
+			&:focus {
+				@extend %focus-fb;
+			}
+		}
+
+		&_instagram {
+
+			&:hover {
+				background-color: $color-insta;
+			}
+
+			&:active {
+				background-color: lighten($color-insta, 15%);
+			}
+
+			&:focus {
+				@extend %focus-insta;
+			}
+		}
+	}
+
+	&__icon {
+		width: 100%;
+		height: 100%;
+	}
+
+	&_inverse {
+
+		.#{$name} {
+			// =====
+
+			&__link {
+				color: $color-text-light;
+
+				&:hover {
+					background-color: $color-text-hover;
+				}
+
+				&:active {
+					background-color: $color-text-active;
+				}
+
+				&_vk {
+
+					&:hover {
+						background-color: $color-vk;
+					}
+
+					&:active {
+						background-color: lighten($color-vk, 15%);
+					}
+				}
+
+				&_facebook {
+
+					&:hover {
+						background-color: $color-fb;
+					}
+
+					&:active {
+						background-color: lighten($color-fb, 15%);
+					}
+				}
+
+				&_instagram {
+
+					&:hover {
+						background-color: $color-insta;
+					}
+
+					&:active {
+						background-color: lighten($color-insta, 15%);
+					}
+				}
+			}
+		}
+	}
+}

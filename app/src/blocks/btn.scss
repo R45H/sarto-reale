@@ -66,10 +66,6 @@ $name: btn;
 			background-color: $color-text-active;
 		}
 
-		&:focus {
-			@extend %focus-inverse;
-		}
-
 		&.#{$name} {
 			// =====
 
