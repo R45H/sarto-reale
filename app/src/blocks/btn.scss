@@ -32,11 +32,7 @@ $name: btn;
 	}
 
 	&:focus {
-		box-shadow: 0 0 0 3px rgba($color-text, .25);
-
-		@include screen-md() {
-			box-shadow: 0 0 0 4px rgba($color-text, .25);
-		}
+		@extend %focus;
 	}
 
 	&_primary {
@@ -71,11 +67,7 @@ $name: btn;
 		}
 
 		&:focus {
-			box-shadow: 0 0 0 3px rgba($color-text-light, .25);
-
-			@include screen-md() {
-				box-shadow: 0 0 0 4px rgba($color-text-light, .25);
-			}
+			@extend %focus-inverse;
 		}
 
 		&.#{$name} {

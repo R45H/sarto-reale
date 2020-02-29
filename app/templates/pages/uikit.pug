@@ -1,5 +1,6 @@
 include ../components/logo
 include ../mixins/offer
+include ../mixins/card
 
 .mb-15
 
@@ -93,3 +94,10 @@ include ../mixins/offer
 		.mb-5rem
 			.invert
 				+offer(offer[1])
+
+	.mb-3rem
+		.row
+
+			each val in card
+				.col-sm-6.col-md-3.mb-15
+					+card(val)

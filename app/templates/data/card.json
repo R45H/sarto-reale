@@ -1,0 +1,24 @@
+{
+	"card": [
+		{
+			"link": "#",
+			"img": "/img/content/card/01.jpg",
+			"title": "Костюмы"
+		},
+		{
+			"link": "#",
+			"img": "/img/content/card/02.jpg",
+			"title": "Жилеты"
+		},
+		{
+			"link": "#",
+			"img": "/img/content/card/03.jpg",
+			"title": "Пиджаки"
+		},
+		{
+			"link": "#",
+			"img": "/img/content/card/04.jpg",
+			"title": "Сорочки"
+		}
+	]
+}

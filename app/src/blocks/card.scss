@@ -1,0 +1,70 @@
+$name: card;
+
+.#{$name} {
+	@extend %transition;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+
+	&__img-wrap {
+		overflow: hidden;
+	}
+
+	&__img {
+		@extend %transition;
+		padding-bottom: 150%;
+		background: no-repeat center / cover;
+	}
+
+	&__title {
+		@extend %transition;
+		padding: 2rem 15px;
+	}
+}
+
+a.#{$name} {
+
+	&:hover,
+	&:active {
+
+		.#{$name} {
+			// =====
+
+			&__img {
+				transform: scale(1.03);
+				opacity: .92;
+			}
+
+			&__title {
+				color: $color-text-light;
+			}
+		}
+	}
+
+	&:hover {
+
+		.#{$name} {
+			// =====
+
+			&__title {
+				background-color: $color-text;
+			}
+		}
+	}
+
+	&:active {
+
+		.#{$name} {
+			// =====
+
+			&__title {
+				background-color: $color-text-active;
+			}
+		}
+	}
+
+	&:focus {
+		@extend %focus;
+		outline: none;
+	}
+}
