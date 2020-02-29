@@ -1,0 +1,52 @@
+{
+	"offer": [
+		{
+			"title": {
+				"text": "Распродажа",
+				"size": "xxl",
+				"weight": "thin"
+			},
+			"subtitle": {
+				"text": "Мужской коллекции",
+				"size": "md",
+				"weight": "thin"
+			},
+			"btn": {
+				"text": "Купите сейчас",
+				"link": "#"
+			}
+		},
+		{
+			"title": {
+				"text": "Nanotech",
+				"size": "xxl"
+			},
+			"subtitle": {
+				"text": "Revolution",
+				"size": "md"
+			},
+			"btn": {
+				"text": "Читать подробнее",
+				"link": "#"
+			},
+			"invert": true
+		},
+		{
+			"title": {
+				"text": "Новая коллекция",
+				"size": "xl",
+				"weight": "thin"
+			},
+			"subtitle": {
+				"text": "FW 2019 - 2020",
+				"size": "md",
+				"weight": "thin"
+			},
+			"btn": {
+				"text": "Смотреть коллекцию",
+				"link": "#"
+			},
+			"invert": true
+		}
+	]
+}

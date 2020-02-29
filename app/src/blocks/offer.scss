@@ -1,0 +1,94 @@
+$name: offer;
+
+.#{$name} {
+	text-align: center;
+	position: relative;
+	padding-top: 4.5rem;
+
+	&::before {
+		content: '';
+		width: 9rem;
+		height: 9rem;
+		background: url('../img/logo-icon.png') no-repeat center / contain;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		opacity: .25;
+
+		@include screen-sm() {
+			opacity: 1;
+		}
+	}
+
+	&__title {
+		position: relative;
+
+		@include screen-sm() {
+			border: 2px solid $color-main;
+			border-bottom: 0;
+			line-height: 1.8;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 2rem;
+
+		@include screen-sm() {
+			margin-bottom: 0;
+			display: flex;
+			align-items: center;
+			transform: translateY(-50%);
+		}
+
+		&::before,
+		&::after {
+
+			@include screen-sm() {
+				content: '';
+				flex-grow: 1;
+				height: 2px;
+				background: $color-main;
+			}
+		}
+
+		&::before {
+
+			@include screen-sm() {
+				margin-right: 7rem;
+			}
+		}
+
+		&::after {
+
+			@include screen-sm() {
+				margin-left: 7rem;
+			}
+		}
+	}
+
+	&_invert {
+
+		&::before {
+			background-image: url('../img/logo-icon-invert.png');
+		}
+
+		.#{$name} {
+			// =====
+
+			&__title {
+				color: $color-text-light;
+				border-color: $color-second;
+			}
+
+			&__subtitle {
+				color: $color-text-light;
+
+				&::before,
+				&::after {
+					background: $color-second;
+				}
+			}
+		}
+	}
+}

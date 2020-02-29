@@ -1,0 +1,16 @@
+mixin offer(data)
+	.offer(class= data.invert ? 'offer_invert': null)
+		.title.offer__title(
+			class= `title_size_${data.title.size}`
+			class= data.title.weight ? `title_weight_${data.title.weight}`: null
+		)= data.title.text
+
+		.title.offer__subtitle(
+			class= `title_size_${data.subtitle.size}`
+			class= data.subtitle.weight ? `title_weight_${data.subtitle.weight}`: null
+		)= data.subtitle.text
+
+		a.btn.btn_primary(
+			href= data.btn.link
+			class= data.invert ? 'btn_invert': null
+		)= data.btn.text

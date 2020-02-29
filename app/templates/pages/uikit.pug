@@ -1,4 +1,5 @@
 include ../components/logo
+include ../mixins/offer
 
 .mb-15
 
@@ -85,3 +86,10 @@ include ../components/logo
 			.col-md-6
 				.invert
 					+logo(invert=true)
+
+	.mb-3rem
+		.mb-5rem
+			+offer(offer[0])
+		.mb-5rem
+			.invert
+				+offer(offer[1])
