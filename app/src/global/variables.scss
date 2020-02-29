@@ -1,5 +1,14 @@
-$color-main: null;
-$color-text: #333;
+$color-main: black;
+$color-second: white;
+$color-danger: #df1010;
+
+$color-text: $color-main;
+$color-text-hover: lighten($color-text, 20%);
+$color-text-active: lighten($color-text, 40%);
+
+$color-text-light: $color-second;
+$color-text-light-hover: darken($color-text-light, 10%);
+$color-text-light-active: darken($color-text-light, 20%);
 
 $color-webcenter-1: #ff141f;
 $color-webcenter-2: #334b61;
@@ -7,31 +16,23 @@ $color-webcenter-2: #334b61;
 $color-vk: #45668e;
 $color-fb: #3b5998;
 $color-insta: #bc2a8d;
-$color-yt: #b00;
-$color-tw: #00aced;
 
 $point-sm: 576px;
 $point-md: 768px;
 $point-lg: 992px;
 $point-xl: 1200px;
 
-$font-main: sans-serif;
+$font-main: 'Museo Sans Cyrl', sans-serif;
 
 $duration: .3s;
 
-$path: '../';
+%transition {
+	transition: $duration ease;
+}
 
-// ----------------------------
-// МИКСИНЫ ДЛЯ ТЕКУЩЕГО ПРОЕКТА
-// ----------------------------
-
-// ----------------------------
-//
-//
-//
-// -------------
-// ОБЩИЕ МИКСИНЫ
-// -------------
+%focus {
+	box-shadow: 0 0 0 3px rgba($color-text-hover, .25);
+}
 
 // Брейкпоинты
 @mixin screen-sm($direct: 'min') {

@@ -86,7 +86,6 @@ lazyRequireTask('css:libs', `${tasks}/css-libs`, {
 lazyRequireTask('js', `${tasks}/js`, {
 	src: [ // Путь к исходникам
 		`${app}/src/script.js`,
-		`${app}/src/blocks/map/map.js`
 	],
 	dist: `${dist}/js`, // Путь для готовых файлов
 	isProd // Флаг сборки на продакшн

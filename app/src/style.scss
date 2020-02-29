@@ -5,21 +5,12 @@
 // =====
 
 // Блоки
-@import 'blocks/map/map'; // Карта
 /* Blocks will be inserted here */
 // =====
 
 // Внешние контейнеры
 @import 'blocks/header'; // Шапка
 @import 'blocks/footer'; // Подвал
-@import 'blocks/section'; // Секция контента
 @import 'blocks/main'; // Контейнер контента
 @import 'blocks/wrapper'; // Внешний контейнер
-// =====
-
-// Стили для печати
-@media print {
-
-	@import 'global/print';
-}
 // =====
