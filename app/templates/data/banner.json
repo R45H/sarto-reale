@@ -1,0 +1,28 @@
+{
+	"banner": [
+		{
+			"img": {
+				"desktop": "img/content/banner/01.jpg",
+				"mobile": "img/content/banner/01-mobile.jpg"
+			},
+			"offer": 0,
+			"align": "left",
+			"fill": "lighter"
+		},
+		{
+			"img": {
+				"desktop": "img/content/banner/02.jpg"
+			},
+			"offer": 1,
+			"fill": "darker"
+		},
+		{
+			"img": {
+				"desktop": "img/content/banner/03.jpg",
+				"mobile": "img/content/banner/03-mobile.jpg"
+			},
+			"offer": 2,
+			"align": "left"
+		}
+	]
+}

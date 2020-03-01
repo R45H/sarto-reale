@@ -1,0 +1,15 @@
+include offer
+
+mixin banner(data)
+	.banner(class= data.fill ? `banner_fill_${data.fill}`: null)
+		.banner__img(
+			data-mobile-image= data.img.mobile || null
+			data-desktop-image= data.img.desktop || null
+		)
+
+		.banner__content-wrap
+			.banner__content
+				.container-fluid
+					.row(class= data.align !== 'left' && 'justify-content-center')
+						.col-lg-9.col-xl-8(class= data.align === 'left' && 'offset-lg-1')
+							+offer(offer[data.offer])(class='banner__offer')

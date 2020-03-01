@@ -2,6 +2,7 @@ include ../components/logo
 include ../components/social
 include ../mixins/offer
 include ../mixins/card
+include ../mixins/banner
 
 .mb-15
 
@@ -95,6 +96,9 @@ include ../mixins/card
 		.mb-5rem
 			.invert
 				+offer(offer[1])
+
+	.mb-3rem
+		+banner(banner[0])
 
 	.mb-3rem
 		.row
