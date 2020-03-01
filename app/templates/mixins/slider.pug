@@ -1,0 +1,16 @@
+mixin slider
+	.slider(
+		class= attributes.class
+		data-rows= attributes.dataRows || null
+		data-cols= attributes.dataCols || null
+		data-sm-rows= attributes.dataSmRows || null
+		data-sm-cols= attributes.dataSmCols || null
+		data-md-rows= attributes.dataMdRows || null
+		data-md-cols= attributes.dataMdCols || null
+		data-lg-rows= attributes.dataLgRows || null
+		data-lg-cols= attributes.dataLgCols || null
+		data-xl-rows= attributes.dataXlRows || null
+		data-xl-cols= attributes.dataXlCols || null
+	)
+		.slider__wrap
+			block

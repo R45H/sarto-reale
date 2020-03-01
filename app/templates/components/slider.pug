@@ -1,0 +1,15 @@
+include ../mixins/slider
+
++slider(
+	class='slider_arrows_upper'
+	dataSmCols=2
+	dataMdCols=3
+	dataLgCols=4
+)
+	each val in card
+		.slider__item
+			+card(val)
+
+	each val in card
+		.slider__item
+			+card(val)
