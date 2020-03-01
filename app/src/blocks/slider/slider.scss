@@ -1,4 +1,4 @@
-$name: slider;
+﻿$name: slider;
 
 .#{$name} {
 	position: relative;
@@ -72,6 +72,112 @@ $name: slider;
 		}
 	}
 
+	&__dots {
+		position: absolute;
+		bottom: 2rem;
+		left: 0;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		list-style-type: none;
+		padding: 0 15px;
+		margin: 0;
+	}
+
+	&__dot {
+		@extend %transition;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 16px;
+		height: 16px;
+		border: 2px solid $color-text;
+		background-color: transparent;
+		cursor: inherit;
+		outline: none;
+		padding: 0;
+
+		&::after {
+			@extend %transition;
+			content: '';
+			background-color: $color-text;
+			width: 8px;
+			height: 8px;
+			opacity: 0;
+		}
+	}
+
+	li {
+		padding: 10px;
+		cursor: pointer;
+		outline: none;
+
+		&:hover {
+
+			.#{$name} {
+				// =====
+
+				&__dot {
+					border-color: $color-text-hover;
+				}
+			}
+		}
+
+		&:active {
+
+			.#{$name} {
+				// =====
+
+				&__dot {
+					border-color: $color-text-active;
+				}
+			}
+		}
+
+		&.slick-active {
+
+			.#{$name} {
+				// =====
+
+				&__dot {
+
+					&::after {
+						opacity: 1;
+					}
+				}
+			}
+
+			&:hover {
+
+				.#{$name} {
+					// =====
+
+					&__dot {
+
+						&::after {
+							background-color: $color-text-hover;
+						}
+					}
+				}
+			}
+
+			&:active {
+
+				.#{$name} {
+					// =====
+
+					&__dot {
+
+						&::after {
+							background-color: $color-text-active;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	&__arrow-icon {
 		width: 100%;
 		height: 100%;
@@ -84,6 +190,35 @@ $name: slider;
 
 			&__arrow {
 				transform: none;
+			}
+		}
+	}
+
+	&_arrows_inner {
+
+		.#{$name} {
+			// =====
+
+			&__arrow {
+				width: 45px;
+				height: 60px;
+				padding: 10px;
+
+				&_prev {
+					left: 0;
+
+					@include screen-md() {
+						left: 0;
+					}
+				}
+
+				&_next {
+					right: 0;
+
+					@include screen-md() {
+						right: 0;
+					}
+				}
 			}
 		}
 	}

@@ -8,15 +8,15 @@ $name: banner;
 		background: no-repeat center / cover;
 
 		@include screen-sm() {
-			padding-bottom: 50%;
+			padding-bottom: 60%;
 		}
 
 		@include screen-lg() {
-			padding-bottom: 45%;
+			padding-bottom: 50%;
 		}
 
 		@include screen-xl() {
-			padding-bottom: 40%;
+			padding-bottom: 45%;
 		}
 	}
 

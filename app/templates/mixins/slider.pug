@@ -1,6 +1,7 @@
 mixin slider
 	.slider(
 		class= attributes.class
+		data-dots = attributes.dataDots || null
 		data-rows= attributes.dataRows || null
 		data-cols= attributes.dataCols || null
 		data-sm-rows= attributes.dataSmRows || null
@@ -11,6 +12,11 @@ mixin slider
 		data-lg-cols= attributes.dataLgCols || null
 		data-xl-rows= attributes.dataXlRows || null
 		data-xl-cols= attributes.dataXlCols || null
+		data-arrows= attributes.dataArrows || null
+		data-sm-arrows= attributes.dataSmArrows || null
+		data-md-arrows= attributes.dataMdArrows || null
+		data-lg-arrows= attributes.dataLgArrows || null
+		data-xl-arrows= attributes.dataXlArrows || null
 	)
 		.slider__wrap
 			block

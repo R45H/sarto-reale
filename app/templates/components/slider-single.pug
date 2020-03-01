@@ -1,0 +1,12 @@
+﻿include ../mixins/slider
+include ../mixins/banner
+
++slider(
+	class='slider_arrows_inner'
+	dataArrows='false'
+	dataLgArrows='true'
+	dataDots='true'
+)
+	each val in banner
+		.slider__item
+			+banner(val)

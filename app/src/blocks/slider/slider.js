@@ -1,6 +1,8 @@
 var
 	classBlock = 'slider',
 	classSlider = classBlock + '__wrap',
+	classDots = classBlock + '__dots',
+	classDot = classBlock + '__dot',
 	classArrow = classBlock + '__arrow',
 	classArrowIcon = classBlock + '__arrow-icon',
 	$blocks = $('.' + classBlock),
@@ -21,6 +23,8 @@ $blocks.each(function() {
 	var
 		$this = $(this),
 		$slider = $this.find('.' + classSlider),
+		sliderDots = $this.attr('data-dots') === 'true',
+
 		sliderRows = +$this.attr('data-rows') || 1,
 		sliderCols = +$this.attr('data-cols') || 1,
 		sliderSmRows = +$this.attr('data-sm-rows') || sliderRows || 1,
@@ -30,15 +34,34 @@ $blocks.each(function() {
 		sliderLgRows = +$this.attr('data-lg-rows') || sliderMdRows || sliderRows || 1,
 		sliderLgCols = +$this.attr('data-lg-cols') || sliderMdCols || sliderCols || 1,
 		sliderXlRows = +$this.attr('data-xl-rows') || sliderLgRows || sliderRows || 1,
-		sliderXlCols = +$this.attr('data-xl-cols') || sliderLgCols || sliderCols || 1;
+		sliderXlCols = +$this.attr('data-xl-cols') || sliderLgCols || sliderCols || 1,
+
+		sliderArrows = $this.attr('data-arrows') !== undefined ? $this.attr('data-arrows') : 'true',
+		sliderSmArrows = $this.attr('data-sm-arrows') !== undefined ? $this.attr('data-sm-arrows') : sliderArrows || 'true',
+		sliderMdArrows = $this.attr('data-md-arrows') !== undefined ? $this.attr('data-md-arrows') : sliderSmArrows || sliderArrows || 'true',
+		sliderLgArrows = $this.attr('data-lg-arrows') !== undefined ? $this.attr('data-lg-arrows') : sliderMdArrows || sliderArrows || 'true',
+		sliderXlArrows = $this.attr('data-xl-arrows') !== undefined ? $this.attr('data-xl-arrows') : sliderLgArrows || sliderArrows || 'true';
+
+	sliderArrows = sliderArrows === 'true';
+	sliderSmArrows = sliderSmArrows === 'true';
+	sliderMdArrows = sliderMdArrows === 'true';
+	sliderLgArrows = sliderLgArrows === 'true';
+	sliderXlArrows = sliderXlArrows === 'true';
 
 	$slider.slick({
 		rows: sliderRows,
 		slidesToShow: sliderCols,
 		slidesToScroll: sliderCols,
+		arrows: sliderArrows,
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
 		appendArrows: $this,
+		dots: sliderDots,
+		dotsClass: classDots,
+		customPaging: function() {
+			return '<button type="button" class="' + classDot + '"></button>'
+		},
+		appendDots: $this,
 		mobileFirst: true,
 		responsive: [
 			{
@@ -47,6 +70,7 @@ $blocks.each(function() {
 					rows: sliderSmRows,
 					slidesToShow: sliderSmCols,
 					slidesToScroll: sliderSmCols,
+					arrows: sliderSmArrows
 				}
 			},
 			{
@@ -55,6 +79,7 @@ $blocks.each(function() {
 					rows: sliderMdRows,
 					slidesToShow: sliderMdCols,
 					slidesToScroll: sliderMdCols,
+					arrows: sliderMdArrows
 				}
 			},
 			{
@@ -63,6 +88,7 @@ $blocks.each(function() {
 					rows: sliderLgRows,
 					slidesToShow: sliderLgCols,
 					slidesToScroll: sliderLgCols,
+					arrows: sliderLgArrows
 				}
 			},
 			{
@@ -71,6 +97,7 @@ $blocks.each(function() {
 					rows: sliderXlRows,
 					slidesToShow: sliderXlCols,
 					slidesToScroll: sliderXlCols,
+					arrows: sliderXlArrows
 				}
 			}
 		]
