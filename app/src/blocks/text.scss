@@ -25,6 +25,7 @@ $name: text;
 
 	&_size_sm {
 		font-size: 12px;
+		font-weight: 300;
 
 		@include screen-sm() {
 			font-size: 13px;

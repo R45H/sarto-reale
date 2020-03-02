@@ -1,0 +1,67 @@
+$name: list-address;
+$size: 5rem;
+
+%marker {
+	position: absolute;
+	top: .5rem;
+	left: 0;
+}
+
+.#{$name} {
+	counter-reset: cnt;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
+	&__item {
+		counter-increment: cnt;
+		margin: 0 0 2rem;
+		position: relative;
+		padding-left: $size + ($size / 5);
+		min-height: $size;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&::before,
+		&::after {
+			@extend %marker;
+			width: $size - ($size / 5);
+			height: $size;
+			text-align: center;
+		}
+
+		&::before {
+			content: '\f041';
+			font-family: $font-fa;
+			color: $color-text;
+			line-height: $size;
+			font-size: $size;
+		}
+
+		&::after {
+			content: counter(cnt);
+			color: $color-text-light;
+			line-height: $size - ($size / 5);
+			font-size: $size / 2;
+			font-weight: 300;
+		}
+
+		&_icon_none {
+
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	&__custom-icon {
+		@extend %marker;
+		width: $size - ($size / 5);
+	}
+}
