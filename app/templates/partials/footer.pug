@@ -1,2 +1,41 @@
+include ../components/logo
+include ../components/social
+include ../mixins/check
+
 // FOOTER
 footer.footer
+	.container
+		.row
+			.col-sm-6.order-sm-1.col-xl-3.order-xl-last.mb-5rem
+				.mb-2rem
+					.title.title_weight_light.title_invert Подписка на новостную рассылку
+				form
+					.mb-2rem
+						input.input.input_invert(type='email' placeholder='E-Mail')
+					.mb-2rem
+						+check({
+							id: 'footer-confirm-mailing',
+							text: 'Я даю согласие на обработку моих персональных данных'
+						})(class='check_invert')
+					input.btn.btn_wide.btn_invert(type='submit')
+
+			each col in menu_footer
+				.col-sm-6.order-sm-2.col-md-4.col-xl-2.mb-5rem
+					.mb-2rem
+						.title.title_weight_light.title_invert= col.title
+					.text.text_size_sm
+
+						each val in col.list
+							.mb-1rem
+								a.link.link_line_none.link_advanced.link_invert(href= val.link)= val.text
+
+			.col-sm-6.col-xl-3.footer__contacts-wrap.mb-5rem
+				.mb-2rem
+					+logo(invert=true)
+				.mb-2rem
+					.text.text_size_lg
+						a.link.link_line_none.link_advanced.link_invert(href= global.salons[0].tel.link)= global.salons[0].tel.text
+				.mb-2rem
+					+social(social)(class='social_inverse')
+				.footer__copyright
+					.text.test_size_sm.text_invert 2020 © SARTO REALE

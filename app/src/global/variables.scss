@@ -23,6 +23,7 @@ $point-sm: 576px;
 $point-md: 768px;
 $point-lg: 992px;
 $point-xl: 1200px;
+$point-xxl: 1400px;
 
 $font-main: 'Museo Sans Cyrl', sans-serif;
 $font-fa: 'Font Awesome Solid', sans-serif;
@@ -60,6 +61,13 @@ $duration: .3s;
 @mixin screen-xl($direct: 'min') {
 
 	@media (if($direct == 'max', 'max-width: #{$point-xl - 1}', 'min-width: #{$point-xl}')) {
+		@content;
+	}
+}
+
+@mixin screen-xxl($direct: 'min') {
+
+	@media (if($direct == 'max', 'max-width: #{$point-xxl - 1}', 'min-width: #{$point-xxl}')) {
 		@content;
 	}
 }

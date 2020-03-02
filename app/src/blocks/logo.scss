@@ -2,6 +2,7 @@ $name: logo;
 
 .#{$name} {
 	display: flex;
+	max-width: 300px;
 
 	&__link {
 		@extend %transition;

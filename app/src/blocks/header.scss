@@ -16,6 +16,8 @@ $name: header;
 	&__logo {
 		padding: 10px 15px;
 		width: 100%;
+		display: flex;
+		justify-content: center;
 
 		@include screen-sm() {
 			width: 230px;
