@@ -115,7 +115,7 @@ lazyRequireTask('img', `${tasks}/img`, {
 lazyRequireTask('svg', `${tasks}/svg`, {
 	src: [ // Путь к исходникам
 		`${app}/img/**/*.svg`,
-		`!${app}img/svg-sprite/**/*.svg`
+		`!${app}/img/svg-sprite/**/*.svg`
 	],
 	dist: `${dist}/img`, // Путь для готовых файлов
 	isProd // Флаг сборки на продакшн
