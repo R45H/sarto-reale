@@ -80,7 +80,7 @@ img {
 }
 
 ::selection {
-
+	background-color: rgba(lighten($color-main, 50%), .5);
 }
 
 .mb-10 {
