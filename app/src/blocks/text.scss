@@ -1,6 +1,15 @@
 $name: text;
 
 .#{$name} {
+	font-size: 14px;
+
+	@include screen-sm() {
+		font-size: 15px;
+	}
+
+	@include screen-md() {
+		font-size: 16px;
+	}
 
 	p {
 		margin: 1rem 0;
@@ -15,11 +24,27 @@ $name: text;
 	}
 
 	&_size_sm {
-		font-size: 14px;
+		font-size: 12px;
+
+		@include screen-sm() {
+			font-size: 13px;
+		}
+
+		@include screen-md() {
+			font-size: 14px;
+		}
 	}
 
 	&_size_lg {
-		font-size: 18px;
+		font-size: 16px;
+
+		@include screen-sm() {
+			font-size: 17px;
+		}
+
+		@include screen-md() {
+			font-size: 18px;
+		}
 	}
 
 	&_invert {

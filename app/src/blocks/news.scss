@@ -1,0 +1,85 @@
+$name: news;
+
+.#{$name} {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	&__img-wrap {
+		flex: 0 0 auto;
+		width: 100%;
+		margin-bottom: 2rem;
+	}
+
+	&__img {
+		padding-bottom: 75%;
+		background: no-repeat center / cover;
+	}
+
+	&__content {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__desc {
+		flex-grow: 1;
+	}
+
+	&_inset {
+		color: $color-second;
+		position: relative;
+		min-height: 300px;
+
+		.#{$name} {
+			// =====
+
+			&__img-wrap {
+				margin-bottom: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+
+				@include screen-sm() {
+					flex-grow: 1;
+					position: static;
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: linear-gradient(to top, rgba(#151515, .76), transparent);
+				}
+			}
+
+			&__img {
+				height: 100%;
+				padding-bottom: 0;
+
+				@include screen-sm() {
+					padding-bottom: 75%;
+				}
+			}
+
+			&__content {
+				position: relative;
+				padding: 3rem;
+				flex: 0 0 auto;
+
+				@include screen-sm() {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 80%;
+					padding: 2rem;
+				}
+			}
+		}
+	}
+}

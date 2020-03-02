@@ -3,6 +3,7 @@ include ../components/social
 include ../mixins/offer
 include ../mixins/card
 include ../mixins/banner
+include ../mixins/news
 
 .mb-15
 
@@ -102,10 +103,8 @@ include ../mixins/banner
 
 	.mb-3rem
 		.row
-
-			each val in card
-				.col-sm-6.col-md-3.mb-15
-					+card(val)
+			.col-sm-6.col-md-3.mb-15
+				+card(card[0])
 
 	.mb-3rem
 		.mb-15
@@ -121,3 +120,10 @@ include ../mixins/banner
 		.mb-15
 			.invert
 				+social(social)(class='social_inverse')
+
+	.mb-3rem
+		.row
+			.col-lg-6.mb-15
+				+news(news[0])(class='news_inset')
+			.col-sm-6.col-lg-3.mb-15
+				+news(news[1])
