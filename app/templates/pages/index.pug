@@ -1,4 +1,57 @@
+include ../mixins/slider
 include ../mixins/banner
+include ../mixins/card
+include ../mixins/news
 
 .container
-	+banner(banner[0])
+	.mb-7rem
+		include ../components/slider-single
+
+	.mb-7rem
+		h2.title.title_weight_light.mb-3rem Распродажа
+
+		+slider(
+			class='slider_arrows_upper'
+			dataSmCols=2
+			dataMdCols=3
+			dataLgCols=4
+		)
+			- for (let i = 0; i <= 1; i++) {
+				each val in card
+					.slider__item
+						+card(val)
+			- }
+
+	.mb-7rem
+		h2.title.title_weight_light.mb-3rem Nanotech revolution
+
+		+banner(banner[1])
+
+	.mb-4rem
+		h2.title.title_weight_light.mb-3rem Новая коллекция
+
+		.mb-30
+			+banner(banner[2])
+
+		.row
+			each val in card
+				.col-sm-6.col-md-3.mb-15.mb-sm-30
+					+card(val)
+
+	.mb-4rem
+		h2.title.title_weight_light.mb-3rem Новости и статьи
+
+		.row
+			each val, i in news
+				div(class= i ? 'mb-30 col-sm-6 col-lg-3': 'mb-15 mb-sm-30 col-lg-6')
+					+news(val)(class= i ? null: 'news_inset')
+
+	.mb-4rem
+		h2.title.title_weight_light.mb-3rem Магазины
+
+		.row
+			.col-lg-6.col-xl-7.mb-3rem
+				img(src='/img/content/salon.jpg')
+
+			.col-lg-6.col-xl-5.mb-3rem
+				include ../components/list-address

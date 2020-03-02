@@ -8,6 +8,7 @@ include ../mixins/news
 include ../mixins/icon
 include ../mixins/text-icon
 include ../mixins/check
+include ../mixins/slider
 
 .mb-15
 
@@ -184,7 +185,17 @@ include ../mixins/check
 
 	.mb-3rem
 		.mb-15
-			include ../components/slider
+			+slider(
+				class='slider_arrows_upper'
+				dataSmCols=2
+				dataMdCols=3
+				dataLgCols=4
+			)
+				- for (let i = 0; i <= 1; i++) {
+					each val in card
+						.slider__item
+							+card(val)
+				- }
 
 	.mb-3rem
 		.mb-15

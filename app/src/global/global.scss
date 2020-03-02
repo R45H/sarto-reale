@@ -91,6 +91,38 @@ img {
 	margin-bottom: 15px;
 }
 
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.mb-sm-30 {
+
+	@include screen-sm() {
+		margin-bottom: 30px;
+	}
+}
+
+.mb-md-30 {
+
+	@include screen-md() {
+		margin-bottom: 30px;
+	}
+}
+
+.mb-lg-30 {
+
+	@include screen-lg() {
+		margin-bottom: 30px;
+	}
+}
+
+.mb-xl-30 {
+
+	@include screen-xl() {
+		margin-bottom: 30px;
+	}
+}
+
 .mb-1rem {
 	margin-bottom: 1rem;
 }
@@ -109,6 +141,14 @@ img {
 
 .mb-5rem {
 	margin-bottom: 5rem;
+}
+
+.mb-6rem {
+	margin-bottom: 6rem;
+}
+
+.mb-7rem {
+	margin-bottom: 7rem;
 }
 
 .invert {
