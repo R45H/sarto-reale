@@ -5,6 +5,7 @@ include ../mixins/card
 include ../mixins/banner
 include ../mixins/news
 include ../mixins/icon
+include ../mixins/check
 
 .mb-15
 
@@ -100,6 +101,19 @@ include ../mixins/icon
 		.row.mb-15
 			.col-sm-6.col-md-3
 				textarea.input(placeholder='textarea.input')
+
+	.mb-3rem
+		.mb-15
+			+check({
+				id: 'test-1',
+				text: '.check'
+			})
+		.mb-15
+			.invert
+				+check({
+					id: 'test-2',
+					text: '.check.check_invert'
+				})(class='check_invert')
 
 	.mb-3rem
 		.row

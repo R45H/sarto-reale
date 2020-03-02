@@ -1,0 +1,65 @@
+$name: check;
+
+.#{$name} {
+	display: flex;
+
+	&__input {
+		display: none;
+
+		&:checked {
+
+			+ label {
+
+				&::before {
+					content: '\f14a';
+				}
+			}
+		}
+	}
+
+	&__label {
+		@extend %transition;
+		display: inline-flex;
+		color: $color-text;
+		font-size: 12px;
+		font-weight: 300;
+		cursor: pointer;
+		user-select: none;
+
+		&::before {
+			content: '\f0c8';
+			font-family: $font-fa-regular;
+			font-size: 1.5em;
+			line-height: 1;
+			flex: 0 0 auto;
+			margin-right: 10px;
+		}
+
+		&:hover {
+			color: $color-text-hover;
+		}
+
+		&:active {
+			color: $color-text-active;
+		}
+	}
+
+	&_invert {
+
+		.#{$name} {
+			// =====
+
+			&__label {
+				color: $color-text-light;
+
+				&:hover {
+					color: $color-text-light-hover;
+				}
+
+				&:active {
+					color: $color-text-active;
+				}
+			}
+		}
+	}
+}
