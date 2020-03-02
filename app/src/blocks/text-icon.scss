@@ -1,0 +1,37 @@
+$name: text-icon;
+
+.#{$name} {
+	@extend %transition;
+	display: inline-flex;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 300;
+
+	&:hover {
+		color: $color-text-hover;
+
+		.#{$name}__icon {
+			fill: $color-text-hover;
+		}
+	}
+
+	&:active {
+		color: $color-text-active;
+
+		.#{$name}__icon {
+			fill: $color-text-active;
+		}
+	}
+
+	&__icon {
+		@extend %transition;
+		width: 20px;
+		height: 20px;
+
+		&:not(:only-child) {
+			margin-right: 10px;
+		}
+	}
+
+	&__text {}
+}

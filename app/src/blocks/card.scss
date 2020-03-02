@@ -65,6 +65,5 @@ a.#{$name} {
 
 	&:focus {
 		@extend %focus;
-		outline: none;
 	}
 }

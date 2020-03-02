@@ -1,0 +1,55 @@
+$name: link;
+
+.#{$name} {
+	@extend a:not([class]);
+
+	&_advanced {
+
+		&:hover {
+			color: $color-text-hover;
+			border-color: $color-text-hover;
+			background-color: transparent;
+		}
+
+		&:active {
+			color: $color-text-active;
+			border-color: $color-text-active;
+			background-color: transparent;
+		}
+	}
+
+	&_invert {
+		color: $color-text-light;
+		border-color: $color-text-light;
+
+		&:hover {
+			color: $color-text;
+			background-color: $color-text-light;
+		}
+
+		&:active {
+			color: $color-text;
+			background-color: $color-text-active;
+			border-color: $color-text-active;
+		}
+
+		&.#{$name}_advanced {
+
+			&:hover {
+				color: $color-text-light-hover;
+				border-color: $color-text-light-hover;
+				background-color: transparent;
+			}
+
+			&:active {
+				color: $color-text-active;
+				border-color: $color-text-active;
+				background-color: transparent;
+			}
+		}
+	}
+
+	&_line_none {
+		border-bottom-color: transparent;
+	}
+}

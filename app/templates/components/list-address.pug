@@ -1,0 +1,21 @@
+include ../mixins/icon
+
+ul.list-address
+
+	each val in global.salons
+		li.list-address__item
+			.title.title_upper_none.mb-1rem= val.name
+
+			.text.text_size_sm
+				p= val.address
+				p!= '<b>Тел:</b> '
+					a(href= val.tel.link)= val.tel.text
+				p!= `<b>Время работы:</b><br>${val.workhours}`
+
+	li.list-address__item.list-address__item_icon_none
+		+icon({
+			icon: 'map'
+		})(class='list-address__custom-icon')
+
+		.text.text_size_lg
+			a(href='#') Все магазины на карте

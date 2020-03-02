@@ -2,4 +2,58 @@ $name: header;
 
 .#{$name} {
 	flex: 0 0 auto;
+	padding: 5px 0;
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+		padding-bottom: 5px;
+	}
+
+	&__logo {
+		padding: 10px 15px;
+		width: 100%;
+
+		@include screen-sm() {
+			width: 230px;
+		}
+	}
+
+	&__search {
+		padding: 10px 15px;
+		width: 100%;
+
+		@include screen-sm() {
+			width: 260px;
+		}
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		padding: 5px;
+		flex-grow: 1;
+
+		@include screen-xl() {
+			flex-grow: 0;
+		}
+	}
+
+	&__link {
+		padding: 5px 10px;
+		display: flex;
+
+		&_left {
+			margin-right: auto;
+		}
+	}
+
+	&__menu {
+		padding: 10px 0;
+	}
 }

@@ -1,0 +1,8 @@
+mixin svg(fileName, classes)
+
+	- if (fileName.slice(0, 3) !== 'svg') {
+		- fileName= 'svg-' + fileName;
+	- }
+
+	svg(class= classes || null)
+		use(xlink:href="img/sprite.svg#" + fileName)

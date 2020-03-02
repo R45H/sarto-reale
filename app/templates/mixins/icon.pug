@@ -1,0 +1,6 @@
+include svg
+
+mixin icon(data)
+	.icon(class= attributes.class)
+		.icon__wrap
+			+svg(data.icon, 'icon__img')

@@ -1,9 +1,12 @@
 $color-main: black;
 $color-second: white;
+
 $color-danger: #df1010;
+$color-danger-hover: lighten($color-danger, 30%);
+$color-danger-active: lighten($color-danger, 40%);
 
 $color-text: $color-main;
-$color-text-hover: lighten($color-text, 25%);
+$color-text-hover: lighten($color-text, 35%);
 $color-text-active: lighten($color-text, 50%);
 
 $color-text-light: $color-second;
@@ -22,6 +25,9 @@ $point-lg: 992px;
 $point-xl: 1200px;
 
 $font-main: 'Museo Sans Cyrl', sans-serif;
+$font-fa: 'Font Awesome Solid', sans-serif;
+$font-fa-regular: 'Font Awesome Regular', sans-serif;
+$font-fa-brands: 'Font Awesome Brands', sans-serif;
 
 $duration: .3s;
 
@@ -120,6 +126,7 @@ $duration: .3s;
 
 %focus {
 	box-shadow: 0 0 0 3px rgba($color-text-active, .5);
+	outline: none;
 
 	@include screen-md() {
 		box-shadow: 0 0 0 4px rgba($color-text-active, .5);
@@ -128,6 +135,7 @@ $duration: .3s;
 
 %focus-vk {
 	box-shadow: 0 0 0 3px rgba($color-vk, .5);
+	outline: none;
 
 	@include screen-md() {
 		box-shadow: 0 0 0 4px rgba($color-vk, .5);
@@ -136,6 +144,7 @@ $duration: .3s;
 
 %focus-fb {
 	box-shadow: 0 0 0 3px rgba($color-fb, .5);
+	outline: none;
 
 	@include screen-md() {
 		box-shadow: 0 0 0 4px rgba($color-fb, .5);
@@ -144,6 +153,7 @@ $duration: .3s;
 
 %focus-insta {
 	box-shadow: 0 0 0 3px rgba($color-insta, .5);
+	outline: none;
 
 	@include screen-md() {
 		box-shadow: 0 0 0 4px rgba($color-insta, .5);

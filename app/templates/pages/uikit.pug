@@ -1,9 +1,13 @@
 include ../components/logo
 include ../components/social
+include ../components/input-search
 include ../mixins/offer
 include ../mixins/card
 include ../mixins/banner
 include ../mixins/news
+include ../mixins/icon
+include ../mixins/text-icon
+include ../mixins/check
 
 .mb-15
 
@@ -40,7 +44,23 @@ include ../mixins/news
 
 	.mb-3rem
 		.mb-15
+			a.link(href='#') .link
+		.mb-15
+			.invert
+				a.link.link_invert(href='#') .link.link_invert
+		.mb-15
+			a.link.link_line_none(href='#') .link.link_line_none
+		.mb-15
+			a.link.link_advanced(href='#') .link.link_advanced
+		.mb-15
+			.invert
+				a.link.link_invert.link_advanced(href='#') .link.link_invert.link_advanced
+
+	.mb-3rem
+		.mb-15
 			.title .title
+		.mb-15
+			.title.title_size_sm .title.title_size_sm
 		.mb-15
 			.title.title_size_md .title.title_size_md
 		.mb-15
@@ -60,6 +80,11 @@ include ../mixins/news
 		.mb-15
 			.invert
 				.title.title_invert .title.title_invert
+
+	.mb-3rem
+		.row
+			.col-sm-6
+				include ../components/list-address
 
 	.mb-3rem
 		.mb-15
@@ -82,6 +107,57 @@ include ../mixins/news
 			.btn.btn_wide .btn.btn_wide
 		.mb-15
 			button.btn.btn_disabled(disabled) button.btn.btn_disabled or [disabled]
+
+	.mb-3rem
+		.row.mb-15
+			.col-sm-6.col-md-3
+				input.input(type='text' placeholder='.input')
+		.row.mb-15
+			.col-sm-6.col-md-3
+				.invert
+					input.input.input_invert(type='text' placeholder='.input.input_invert')
+		.row.mb-15
+			.col-sm-6.col-md-3
+				textarea.input(placeholder='textarea.input')
+
+	.mb-3rem
+		.row.mb-15
+			.col-sm-6.col-md-3
+				+input-search
+
+	.mb-3rem
+		.mb-15
+			+check({
+				id: 'test-1',
+				text: '.check'
+			})
+		.mb-15
+			.invert
+				+check({
+					id: 'test-2',
+					text: '.check.check_invert'
+				})(class='check_invert')
+
+	.mb-3rem
+		.row
+			.col-2
+				+icon({icon: 'map'})
+			.col-2
+				.invert
+					+icon({icon: 'map'})(class='icon_invert')
+
+	.mb-3rem
+		.mb-15
+			+text-icon({
+				icon: 'star'
+			})
+		.mb-15
+			+text-icon({
+				text: '.text-icon',
+				icon: 'star'
+			})
+		.mb-15
+			+text-icon({text: '.text-icon without icon'})
 
 	.mb-3rem
 		.row
