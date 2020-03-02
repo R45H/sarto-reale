@@ -6,6 +6,7 @@ include ../mixins/card
 include ../mixins/banner
 include ../mixins/news
 include ../mixins/icon
+include ../mixins/text-icon
 include ../mixins/check
 
 .mb-15
@@ -128,6 +129,19 @@ include ../mixins/check
 			.col-2
 				.invert
 					+icon({icon: 'map'})(class='icon_invert')
+
+	.mb-3rem
+		.mb-15
+			+text-icon({
+				icon: 'star'
+			})
+		.mb-15
+			+text-icon({
+				text: '.text-icon',
+				icon: 'star'
+			})
+		.mb-15
+			+text-icon({text: '.text-icon without icon'})
 
 	.mb-3rem
 		.row

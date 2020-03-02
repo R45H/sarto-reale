@@ -1,0 +1,9 @@
+include icon
+
+mixin text-icon(data)
+	a.text-icon(href='#')
+		if (data.icon)
+			+icon({icon: data.icon})(class='text-icon__icon')
+
+		if (data.text)
+			span.text-icon__text= data.text
