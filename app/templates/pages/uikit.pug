@@ -1,5 +1,6 @@
 include ../components/logo
 include ../components/social
+include ../components/input-search
 include ../mixins/offer
 include ../mixins/card
 include ../mixins/banner
@@ -101,6 +102,11 @@ include ../mixins/check
 		.row.mb-15
 			.col-sm-6.col-md-3
 				textarea.input(placeholder='textarea.input')
+
+	.mb-3rem
+		.row.mb-15
+			.col-sm-6.col-md-3
+				+input-search
 
 	.mb-3rem
 		.mb-15

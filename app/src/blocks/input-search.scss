@@ -1,0 +1,37 @@
+$name: input-search;
+
+.#{$name} {
+	position: relative;
+
+	&__input {
+		padding-right: calc(39px + .5rem);
+	}
+
+	&__btn {
+		@extend %transition;
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 40px;
+		padding: 10px;
+		fill: $color-text;
+
+		&:hover {
+			fill: $color-text-hover;
+		}
+
+		&:active {
+			fill: $color-text-active;
+		}
+
+		&:focus {
+			@extend %focus;
+		}
+	}
+
+	&__icon {
+		width: 100%;
+		height: 100%;
+	}
+}

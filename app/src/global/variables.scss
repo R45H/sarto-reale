@@ -123,6 +123,7 @@ $duration: .3s;
 
 %focus {
 	box-shadow: 0 0 0 3px rgba($color-text-active, .5);
+	outline: none;
 
 	@include screen-md() {
 		box-shadow: 0 0 0 4px rgba($color-text-active, .5);
@@ -131,6 +132,7 @@ $duration: .3s;
 
 %focus-vk {
 	box-shadow: 0 0 0 3px rgba($color-vk, .5);
+	outline: none;
 
 	@include screen-md() {
 		box-shadow: 0 0 0 4px rgba($color-vk, .5);
@@ -139,6 +141,7 @@ $duration: .3s;
 
 %focus-fb {
 	box-shadow: 0 0 0 3px rgba($color-fb, .5);
+	outline: none;
 
 	@include screen-md() {
 		box-shadow: 0 0 0 4px rgba($color-fb, .5);
@@ -147,6 +150,7 @@ $duration: .3s;
 
 %focus-insta {
 	box-shadow: 0 0 0 3px rgba($color-insta, .5);
+	outline: none;
 
 	@include screen-md() {
 		box-shadow: 0 0 0 4px rgba($color-insta, .5);

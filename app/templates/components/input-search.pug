@@ -1,0 +1,7 @@
+include ../mixins/svg
+
+mixin input-search(data)
+	.input-search
+		input.input.input-search__input(type='text' placeholder='Введите запрос' tabIndex='1')
+		a.input-search__btn(href='#' tabIndex='2')
+			+svg('search', 'input-search__icon')
