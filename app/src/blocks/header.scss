@@ -31,15 +31,23 @@ $name: header;
 		@include screen-sm() {
 			width: 260px;
 		}
+
+		@include screen-xxl() {
+			width: 420px;
+		}
 	}
 
 	&__links {
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
+		justify-content: center;
 		flex-wrap: wrap;
 		padding: 5px;
 		flex-grow: 1;
+
+		@include screen-sm() {
+			justify-content: flex-end;
+		}
 
 		@include screen-xl() {
 			flex-grow: 0;
@@ -51,11 +59,22 @@ $name: header;
 		display: flex;
 
 		&_left {
-			margin-right: auto;
+			width: 100%;
+			justify-content: center;
+
+			@include screen-sm() {
+				width: auto;
+				margin-right: auto;
+			}
 		}
 	}
 
 	&__menu {
 		padding: 10px 0;
+		text-align: center;
+
+		@include screen-sm() {
+			text-align: left;
+		}
 	}
 }

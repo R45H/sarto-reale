@@ -7,11 +7,10 @@ $name: menu;
 		margin: -5px -15px;
 		padding: 0;
 		list-style-type: none;
-		display: flex;
-		flex-wrap: wrap;
 	}
 
 	&__item {
+		display: inline-block;
 		padding: 5px 15px;
 
 		&_hot {
