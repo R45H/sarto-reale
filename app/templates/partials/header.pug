@@ -1,2 +1,34 @@
+include ../components/logo
+include ../components/input-search
+include ../mixins/text-icon
+
 // HEADER
 header.header
+	.container
+		.header__top
+			.header__logo
+				+logo
+
+			.header__search
+				+input-search
+
+			.header__links
+				.header__link.header__link_left
+					.text.text_size_lg
+						a.link.link_line_none.link_advanced(href= global.salons[0].tel.link)= global.salons[0].tel.text
+
+				.header__link
+					+text-icon({text: 'Клиентская служба'})
+
+				.header__link
+					+text-icon({icon: 'user', text: 'Личный кабинет'})
+
+				.header__link
+					+text-icon({icon: 'star', text: '0'})
+
+				.header__link
+					+text-icon({icon: 'basket', text: '2'})
+
+
+		.header__menu
+			include ../components/menu

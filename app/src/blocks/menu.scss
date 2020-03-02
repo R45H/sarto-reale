@@ -1,0 +1,39 @@
+$name: menu;
+
+.#{$name} {
+	overflow: hidden;
+
+	&__wrap {
+		margin: -5px -15px;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		padding: 5px 15px;
+
+		&_hot {
+
+			.#{$name}__link {
+				color: $color-danger;
+
+				&:hover {
+					color: $color-danger-hover;
+				}
+
+				&:active {
+					color: $color-danger-active;
+				}
+			}
+		}
+	}
+
+	&__link {
+
+		&:hover {
+			border-bottom-color: currentColor;
+		}
+	}
+}

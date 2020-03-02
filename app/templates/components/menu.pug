@@ -1,0 +1,6 @@
+nav.menu
+	ul.menu__wrap
+
+		each val in menu
+			li.menu__item(class= val.hot ? 'menu__item_hot': null)
+				a.link.link_advanced.link_line_none.title.title_size_sm.title_upper_none.title_weight_thin.menu__link(href= val.link)= val.text

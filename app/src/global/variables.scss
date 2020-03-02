@@ -1,9 +1,12 @@
 $color-main: black;
 $color-second: white;
+
 $color-danger: #df1010;
+$color-danger-hover: lighten($color-danger, 30%);
+$color-danger-active: lighten($color-danger, 40%);
 
 $color-text: $color-main;
-$color-text-hover: lighten($color-text, 25%);
+$color-text-hover: lighten($color-text, 35%);
 $color-text-active: lighten($color-text, 50%);
 
 $color-text-light: $color-second;
