@@ -4,6 +4,7 @@ include ../mixins/offer
 include ../mixins/card
 include ../mixins/banner
 include ../mixins/news
+include ../mixins/icon
 
 .mb-15
 
@@ -82,6 +83,14 @@ include ../mixins/news
 			.btn.btn_wide .btn.btn_wide
 		.mb-15
 			button.btn.btn_disabled(disabled) button.btn.btn_disabled or [disabled]
+
+	.mb-3rem
+		.row
+			.col-2
+				+icon({icon: 'map'})
+			.col-2
+				.invert
+					+icon({icon: 'map'})(class='icon_invert')
 
 	.mb-3rem
 		.row

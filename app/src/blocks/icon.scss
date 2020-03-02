@@ -1,0 +1,24 @@
+$name: icon;
+
+.#{$name} {
+	display: block;
+	width: 100%;
+	fill: $color-text;
+
+	&__wrap {
+		position: relative;
+		padding-bottom: 100%;
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&_invert {
+		fill: $color-text-light;
+	}
+}
