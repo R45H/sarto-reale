@@ -9,9 +9,9 @@
 	"homepage": "",
 	"dependencies": {
 		"bootstrap": "^4.1.1",
-		"fontawesome": "4.*",
-		"jquery": "2.*",
-		"normalize-css": "^7.0.0",
+		"fontawesome": "5.*",
+		"jquery": "3.*",
+		"normalize-css": "^8.*",
 		"slick-carousel": "^1.8.0",
 		"svg4everybody": "^2.1.9"
 	}
