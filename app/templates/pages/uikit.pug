@@ -90,6 +90,18 @@ include ../mixins/icon
 			button.btn.btn_disabled(disabled) button.btn.btn_disabled or [disabled]
 
 	.mb-3rem
+		.row.mb-15
+			.col-sm-6.col-md-3
+				input.input(type='text' placeholder='.input')
+		.row.mb-15
+			.col-sm-6.col-md-3
+				.invert
+					input.input.input_invert(type='text' placeholder='.input.input_invert')
+		.row.mb-15
+			.col-sm-6.col-md-3
+				textarea.input(placeholder='textarea.input')
+
+	.mb-3rem
 		.row
 			.col-2
 				+icon({icon: 'map'})

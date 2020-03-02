@@ -1,0 +1,59 @@
+$name: input;
+
+.#{$name} {
+	@extend %transition;
+	display: block;
+	width: 100%;
+	font-family: $font-main;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.5;
+	color: $color-text;
+	border: 1px solid transparent;
+	border-bottom-color: currentColor;
+	background: transparent;
+	padding: 1rem .5rem;
+	outline: none;
+	appearance: none;
+
+	@include input-autofill($color-text, $color-text, $color-text-light);
+
+	@include input-placeholder {
+		color: $color-text-hover;
+		font-weight: 300;
+		transition: $duration ease;
+	}
+
+	&:hover,
+	&:active {
+		border-color: $color-text-active;
+	}
+
+	&:focus {
+		@extend %focus;
+		border-color: $color-text;
+
+		@include input-placeholder {
+			text-indent: 1.5rem;
+		}
+	}
+
+	&_invert {
+		color: $color-text-light;
+
+		@include input-autofill($color-text-light, $color-text-light, $color-text);
+
+		@include input-placeholder {
+			color: $color-text-light-hover;
+		}
+
+		&:focus {
+			border-color: $color-text-light;
+		}
+	}
+}
+
+textarea.#{$name} {
+	min-height: 95px;
+	resize: vertical;
+}
