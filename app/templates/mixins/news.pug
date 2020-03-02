@@ -3,7 +3,12 @@ mixin news(data)
 
 	.news(class= attributes.class)
 		.news__img-wrap
-			.news__img(style=`background-image: url(${data.img})`)
+			.news__img(
+				style=`background-image: url(${data.img})`
+				role='img'
+				aria-label= data.title
+				title= data.title
+			)
 
 		.news__content
 			.title.title_weight_bold.mb-2rem(class= isInset ? 'title_size_md title_invert': 'title_upper_none')= data.title
